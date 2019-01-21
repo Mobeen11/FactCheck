@@ -29,6 +29,7 @@ class NERCreator:
     #         FactCheck().isFact(entity=self.NERFactEntities)
 
     def CreateNER(self):
+        # print "traiing: ", self.training_facts
         for fact in self.training_facts:
             fact_id = fact['FactID']
             fact_statement = unicode(fact['Fact_Statement'], encoding="latin-1")
@@ -39,10 +40,13 @@ class NERCreator:
             for w in tokenized_word:
                 if w not in self.stop_words:
                     filtered_sent += " " + w
-            print("Filterd Sentence:", filtered_sent)
-            print ("get_continuous_chunks: ", self.get_continuous_chunks(filtered_sent))
+            # print("Filterd Sentence:", filtered_sent)
+            # print ("get_continuous_chunks: ", self.get_continuous_chunks(filtered_sent))
 
-            FactCheck().isFact(entity=self.NERFactEntities)
+            fact['NER'] = self.get_continuous_chunks(filtered_sent)
+            fact['value'] = FactCheck().isFact(entity=fact['NER'])
+            # print "FactCheck", FactCheck().isFact(entity=fact['NER'])
+            self.WriteFile(fact['FactID'], fact['value'])
 
     def get_continuous_chunks(self, text):
         chunked = ne_chunk(pos_tag(word_tokenize(text)))
@@ -60,12 +64,11 @@ class NERCreator:
                 continue
         return continuous_chunk
 
-    def WriteFile(self):
+    def WriteFile(self, factID, prob):
         fact_URI = "<http://swc2017.aksw.org/task2/dataset/"
-        prop_URI = "<http://swc2017.aksw.org/hasTruthValue"
-        value = "^^<http://www.w3.org/2001/XMLSchema#double>"
+        prop_URI = "<http://swc2017.aksw.org/hasTruthValue>"
+        value = "^^<http://www.w3.org/2001/XMLSchema#double>."
         with open("result.ttl", 'a') as resultFile:
-            for facts in self.training_facts:
-                resultFile.write(fact_URI + str(facts['FactID']) + "> " + prop_URI + ".\"" + str(facts['value']) + "\"" + value)
+                resultFile.write(fact_URI + str(factID) + ">." + prop_URI + ".\"" + str(prob) + "\"" + value)
                 resultFile.write("\n")
 

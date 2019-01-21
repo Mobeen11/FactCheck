@@ -1,61 +1,41 @@
 import wikipedia
+import unicodedata
 
 
 class FactCheck:
-
     def __init__(self):
         self.entity = None
         self.wiki_search = None
+        self.returnValue = 0
 
     def isFact(self, entity):
-        entity = []
         if entity:
-            count_dict = {}
-            entityList = []
-            combining_ner = None
+            # print "entity: ", entity
             for e in entity:
-                ent = e[0]
-                entityList.append(ent.encode(encoding="latin-1"))
-            for e in entityList:
-                wikiPage = e
+                page = ""
                 try:
-                    page = wikipedia.page(wikiPage)
-                    text = page.content.encode(encoding='UTF-8', errors='strict')
+                    # print "e: ", e
+                    page = wikipedia.page(e)
 
-                    for term in entityList:
-                        if term != "":
-                            count = text.count(term)
-                            # if count > 0:
-                            count_dict[term] = count
-
+                except wikipedia.exceptions.DisambiguationError as e:
+                    print "exception: ", e.options
+                    try:
+                        page = wikipedia.page(e.options[0])
+                    except Exception as e:
+                        return -1
                 except Exception as e:
-                    print "error: ", e
-                    return False
-            print "count_dict: ", count_dict
-        return False
+                    print "exception 2", e
+                    return -1.0
 
-# statement = ""
-# wikiPage = unicode("P\xe4r Lagerkvist", 'latin-1')
-# page = wikipedia.page(wikiPage)
-#
-# termsList = ["P\xe4r Lagerkvist", "Nobel Prize", "Physics"]
-# # text = unicodedata.normalize('NFKD', page.content).encode('ascii','ignore')
-# text = page.content.encode(encoding='UTF-8',errors='strict')
-#
-# def get_term_count(list):
-#     count_dict = {}
-#
-#     for term in list:
-#         if term != "":
-#             count = text.count(term)
-#             # if count > 0:
-#             count_dict[term] = count
-#     return count_dict
-#
-#
-# dic = get_term_count(termsList)
-#
-# print dic
+                text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')
+                for term in entity:
+                    if term != "":
+                        count = text.count(term)
+                        if count > 0:
+                            self.returnValue += 1
 
+            if self.returnValue > 1:
+                return 1.0
+        return -1
 
 
