@@ -10,32 +10,24 @@ class FactCheck:
 
     def isFact(self, entity):
         if entity:
-            # print "entity: ", entity
-            for e in entity:
-                page = ""
-                try:
-                    # print "e: ", e
-                    page = wikipedia.page(e)
+            # for ent in entity:
+            ent = entity[0]
+            # print "ent: ", ent
+            page = ""
+            try:
+                page = wikipedia.page(ent)
+            except Exception as ex:
+                # print "exception: ", ex
+                return -1.0
 
-                except wikipedia.exceptions.DisambiguationError as e:
-                    print "exception: ", e.options
-                    try:
-                        page = wikipedia.page(e.options[0])
-                    except Exception as e:
-                        return -1
-                except Exception as e:
-                    print "exception 2", e
-                    return -1.0
+            text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')
+            for term in entity:
+                if term != "":
+                    if term in text:
+                        self.returnValue += 1
 
-                text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')
-                for term in entity:
-                    if term != "":
-                        count = text.count(term)
-                        if count > 0:
-                            self.returnValue += 1
-
-            if self.returnValue > 1:
+            if self.returnValue >= 1:
                 return 1.0
-        return -1
+        return -1.0
 
 
