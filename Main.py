@@ -2,9 +2,9 @@ from NER import NERCreator
 
 
 def main():
-    print("python main function")
+
     fact = NERCreator()
-    fact.ReadFile("train.tsv")
+    fact.ReadFile("test.tsv")
     fact.CreateNER()
 
 

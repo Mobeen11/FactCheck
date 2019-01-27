@@ -18,7 +18,7 @@ class FactCheck:
                 page = wikipedia.page(ent)
             except Exception as ex:
                 # print "exception: ", ex
-                return -1.0
+                return 0.0
 
             text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')
             for term in entity:

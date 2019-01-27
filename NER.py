@@ -19,7 +19,6 @@ class NERCreator:
                 self.training_facts.append(row)
 
     def CreateNER(self):
-        # print "traiing: ", self.training_facts
         for fact in self.training_facts:
             fact_id = fact['FactID']
             fact_statement = unicode(fact['Fact_Statement'], encoding="latin-1")
@@ -29,9 +28,7 @@ class NERCreator:
             ents = [e.text for e in doc.ents]
             fact['NER'] = ents
             fact['value'] = FactCheck().isFact(entity=fact['NER'])
-            # fact['value'] = FactCheck().isFact(entity=fact['NER'])
             self.WriteFile(fact['FactID'], fact['value'])
-        # print "fact: ", FactCheck().isFact(entity=[u'David Lee', u'Memphis Grizzlies'])
 
     def WriteFile(self, factID, prob):
         fact_URI = "<http://swc2017.aksw.org/task2/dataset/"
