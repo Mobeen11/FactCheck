@@ -20,23 +20,18 @@ pip3 install -r requirements.txt
 
 **Query Wikipedia:** Once the NER is determined query the wikipedia to check its true value.
 
-###Algorithm
+### Algorithm
 ```
 1- Get Entities from statement
-
 2- query entities on **wikipedia**
-
 3- if other entities found on wikipedia page
-
 4-      **return** 1
-
 5- else
       **return** -1
 ```
 
 ## Collaborators
 Zulfiqar 
-
 MOBEEN AHMED
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
