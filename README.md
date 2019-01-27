@@ -13,6 +13,11 @@ python 3.x
 ```bash
 pip3 install -r requirements.txt 
 ```
+After the requirements are installed add the .tsv file path and run the main and result.ttl will be created in existing directory.
+```python
+    fact.ReadFile("test.tsv")
+```
+
 ## Approach 
 ![Approach](https://res.cloudinary.com/dymq10xxe/image/upload/v1548608998/approach.png)
  
