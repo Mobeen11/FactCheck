@@ -13,25 +13,32 @@ python 3.x
 ```bash
 pip3 install -r requirements.txt 
 ```
-## Approach Description
+## Approach 
 ![Approach](https://res.cloudinary.com/dymq10xxe/image/upload/v1548608998/approach.png)
-
-**FactChecker Model:** Extract the Name Entity Recognition from the input statements. The model was built using python NLP package "Spacy".
+ 
+**FactChecker Model:** Extract the Name Entity Recognition from the input statements. 
 
 **Query Wikipedia:** Once the NER is determined query the wikipedia to check its true value.
 
+## Description
+
+In FactChecker first NER model is created using spacy (Open source NLP package). Then it is trained using train.tsv for the extraction of SUB/OBJ/PRE from the input statments. Once SUB and OBJ are extracted these entities are searched on the wikipedia and returns the factValue.
+
 ### Algorithm
 ```
-1- Get Entities from statement
-2- query entities on **wikipedia**
-3- if other entities found on wikipedia page
-4-      **return** 1
-5- else
-      **return** -1
+1- Train NER model (factCheckerModel)
+2- Get Entities from statement
+3- query entities on **wikipedia**
+4- if other entities found on wikipedia page
+5-      **return** 1
+6- else
+7-      **return** -1
+8- if page not found
+9-      **return** 0
 ```
 
 ## Collaborators
-Zulfiqar 
-MOBEEN AHMED
+**ZULFIQAR AHMED
+MOBEEN AHMED**
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
