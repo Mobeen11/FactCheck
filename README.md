@@ -14,7 +14,7 @@ python 3.x
 pip3 install -r requirements.txt 
 ```
 ## Approach Description
-![Approach](https://drive.google.com/file/d/1LxWy5hjBRbQbGNdPdQioxQ00GDGAKlkv/view?usp=sharing)
+![Approach](https://res.cloudinary.com/dymq10xxe/image/upload/v1548608998/approach.png)
 
 **FactChecker Model:** Extract the Name Entity Recognition from the input statements. The model was built using python NLP package "Spacy".
 **Query Wikipedia:** Once the NER is determined  
