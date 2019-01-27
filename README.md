@@ -2,17 +2,23 @@
 
 Fact Checking engine returns a value between +1 and -1 given a fact from DBpedia.
 
-## Approach
+## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install required packages used in project.
+python 2.x
 ```bash
-pip install 
+pip install -r requirements.txt 
 ```
+python 3.x
+```bash
+pip3 install -r requirements.txt 
+```
+## Approach Description
+![Approach](https://drive.google.com/file/d/1LxWy5hjBRbQbGNdPdQioxQ00GDGAKlkv/view?usp=sharing)
 
-## Usage
-
-```python
+**FactChecker Model:** Extract the Name Entity Recognition from the input statements. The model was built using python NLP package "Spacy".
+**Query Wikipedia:** Once the NER is determined  
+```
 import foobar
 
 foobar.pluralize('word') # returns 'words'
@@ -20,10 +26,8 @@ foobar.pluralize('goose') # returns 'geese'
 foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
+## Collaborators
+Zulfiqar 
+MOBEEN AHMED
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
