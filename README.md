@@ -18,13 +18,20 @@ pip3 install -r requirements.txt
 
 **FactChecker Model:** Extract the Name Entity Recognition from the input statements. The model was built using python NLP package "Spacy".
 
-**Query Wikipedia:** Once the NER is determined  
-```
-import foobar
+**Query Wikipedia:** Once the NER is determined query the wikipedia to check its true value.
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+###Algorithm
+```
+1- Get Entities from statement
+
+2- query entities on **wikipedia**
+
+3- if other entities found on wikipedia page
+
+4-      **return** 1
+
+5- else
+      **return** -1
 ```
 
 ## Collaborators
