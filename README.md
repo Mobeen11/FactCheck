@@ -17,6 +17,7 @@ pip3 install -r requirements.txt
 ![Approach](https://res.cloudinary.com/dymq10xxe/image/upload/v1548608998/approach.png)
 
 **FactChecker Model:** Extract the Name Entity Recognition from the input statements. The model was built using python NLP package "Spacy".
+
 **Query Wikipedia:** Once the NER is determined  
 ```
 import foobar
@@ -28,6 +29,7 @@ foobar.singularize('phenomena') # returns 'phenomenon'
 
 ## Collaborators
 Zulfiqar 
+
 MOBEEN AHMED
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
