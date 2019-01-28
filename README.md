@@ -33,7 +33,7 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 ```
 1- Train NER model (factCheckerModel)
 2- Get Entities from statement
-3- query entities on **wikipedia**
+3- query entities on wikipedia
 4- if other entities found on wikipedia page
 5-      return 1
 6- else
