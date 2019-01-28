@@ -35,11 +35,11 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 2- Get Entities from statement
 3- query entities on **wikipedia**
 4- if other entities found on wikipedia page
-5-      **return** 1
+5-      return 1
 6- else
-7-      **return** -1
+7-      return -1
 8- if page not found
-9-      **return** 0
+9-      return 0
 ```
 
 ## Collaborators
