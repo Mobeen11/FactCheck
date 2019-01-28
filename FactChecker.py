@@ -10,14 +10,11 @@ class FactCheck:
 
     def isFact(self, entity):
         if entity:
-            # for ent in entity:
             ent = entity[0]
-            # print "ent: ", ent
             page = ""
             try:
                 page = wikipedia.page(ent)
             except Exception as ex:
-                # print "exception: ", ex
                 return 0.0
 
             text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')

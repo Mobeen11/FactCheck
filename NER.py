@@ -1,7 +1,4 @@
-from nltk import ne_chunk, pos_tag, word_tokenize
 from FactChecker import FactCheck
-from nltk.corpus import stopwords
-from nltk.tree import Tree
 import csv, spacy, re
 
 
@@ -9,9 +6,7 @@ class NERCreator:
     def __init__(self):
         self.training_facts = []
         self.NERFactEntities = []
-        # self.wikipedia_model = spacy.load('xx_ent_wiki_sm')
         self.wikipedia_model = spacy.load('./factCheckerModel')
-        self.stop_words = set(stopwords.words("english"))
 
     def ReadFile(self, filename):
         with open(filename) as trainingFile:
