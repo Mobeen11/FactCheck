@@ -32,12 +32,13 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 ## Non-Working facts
 
 **False Positive**
+```
 1- George Bernard Shaw born in Liverpool. 	-1
 2- Palo Alto is Siebel Systems' innovation place. 	-1  
 3- Netherlands is Wim Kok's role.	-1
 4- Star Trek Into Darkness directed by Chris Pine.  	-1
 5- Compton, California nascence place of Dr. Dre.   -1
-
+```
 **False Negative**
 1- Beck's birth place is Königsberg.   1
 2- Vernor Vinge is A Deepness in the Sky's generator.  1
