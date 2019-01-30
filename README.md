@@ -29,12 +29,21 @@ After the requirements are installed add the .tsv file path and run the main and
 
 In FactChecker first NER model is created using spacy (Open source NLP package). Then it is trained using train.tsv for the extraction of SUB/OBJ/PRE from the input statments. Once SUB and OBJ are extracted these entities are searched on the wikipedia and returns the factValue.
 
-## Not Working facts
-	George Bernard Shaw born in Liverpool   
-	Palo Alto is Siebel Systems' innovation place.   
-	Netherlands is Wim Kok's role. 
-	Star Trek Into Darkness directed by Chris Pine.  
-	Compton, California nascence place of Dr. Dre.   
+## Non-Working facts
+
+**False Positive**
+1- George Bernard Shaw born in Liverpool. 	-1
+2- Palo Alto is Siebel Systems' innovation place. 	-1  
+3- Netherlands is Wim Kok's role.	-1
+4- Star Trek Into Darkness directed by Chris Pine.  	-1
+5- Compton, California nascence place of Dr. Dre.   -1
+
+**False Negative**
+1- Beck's birth place is Königsberg.   1
+2- Vernor Vinge is A Deepness in the Sky's generator.  1
+3- Pano Logic founded in California United States.     1
+4- Doris Lessing won Nobel in Literature.  1
+5- Adore(film) is adapted from The Grandmothers.   1
 
 ### Algorithm
 ```
@@ -48,8 +57,5 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 ```
 
 ## Team: Void 2.0
-ZULFIQAR AHMED
-
-MOBEEN AHMED
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+Zulfiqar Ahmed
+Mobeen Ahmed
