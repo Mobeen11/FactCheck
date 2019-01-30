@@ -40,12 +40,13 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 5- Compton, California nascence place of Dr. Dre.   -1
 ```
 **False Negative**
+```
 1- Beck's birth place is Königsberg.   1
 2- Vernor Vinge is A Deepness in the Sky's generator.  1
 3- Pano Logic founded in California United States.     1
 4- Doris Lessing won Nobel in Literature.  1
 5- Adore(film) is adapted from The Grandmothers.   1
-
+```
 ### Algorithm
 ```
 1- Train NER model (factCheckerModel)
