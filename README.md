@@ -29,6 +29,13 @@ After the requirements are installed add the .tsv file path and run the main and
 
 In FactChecker first NER model is created using spacy (Open source NLP package). Then it is trained using train.tsv for the extraction of SUB/OBJ/PRE from the input statments. Once SUB and OBJ are extracted these entities are searched on the wikipedia and returns the factValue.
 
+## Not Working facts
+	George Bernard Shaw born in Liverpool   
+	Palo Alto is Siebel Systems' innovation place.   
+	Netherlands is Wim Kok's role. 
+	Star Trek Into Darkness directed by Chris Pine.  
+	Compton, California nascence place of Dr. Dre.   
+
 ### Algorithm
 ```
 1- Train NER model (factCheckerModel)
@@ -38,8 +45,6 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 5-      return 1
 6- else
 7-      return -1
-8- if page not found
-9-      return 0
 ```
 
 ## Collaborators
