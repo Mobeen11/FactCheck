@@ -58,4 +58,5 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 
 ## Team: Void 2.0
 Zulfiqar Ahmed
+
 Mobeen Ahmed
