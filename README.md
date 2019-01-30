@@ -47,9 +47,9 @@ In FactChecker first NER model is created using spacy (Open source NLP package).
 7-      return -1
 ```
 
-## Collaborators
-**ZULFIQAR AHMED**
+## Team: Void 2.0
+ZULFIQAR AHMED
 
-**MOBEEN AHMED**
+MOBEEN AHMED
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
